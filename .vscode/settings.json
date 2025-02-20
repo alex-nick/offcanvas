@@ -1,0 +1,11 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[php]": {
+		"editor.defaultFormatter": "wongjn.php-sniffer"
+	},
+	"phpcs.standard": "./phpcs.xml.dist",
+	"phpSniffer.standard": "./phpcs.xml.dist",
+	// Create new files in the LF format on Windows.
+	"files.eol": "\n"
+}

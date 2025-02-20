@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+		link(href="./css/tailwindcss.css", rel="stylesheet")
+		link(href="./css/style.css", rel="stylesheet")
+	body
+		nav#mp-menu.mp-menu
+			include ./includes/level.pug
+		include ./includes/trigger.pug
+
+	script(src="../src/js/script.js")
+	script new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
