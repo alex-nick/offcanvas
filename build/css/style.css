@@ -14,7 +14,7 @@ body {
 	height: 100%;
 	max-width: 600px;
 	transform: translate3d(100%, 0, 0);
-	transition: transform 0.5s;
+	transition: transform 0.5s ease;
 }
 
 .opus-dashboard__level {
@@ -25,7 +25,7 @@ body {
 	height: 100%;
 	box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
 	transform: translate3d(100%, 0, 0);
-	transition: transform 0.5s;
+	transition: transform 0.5s ease;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,7 +50,7 @@ body {
 		transform: scale(0);
 		background-color: rgba(0, 0, 0, 0.05);
 		transition:
-			transform 0.5s, opacity 0.5s;
+			transform 0.1s, opacity 0.5s;
 		z-index: -1;
 		cursor: pointer;
 	}

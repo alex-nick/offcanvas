@@ -758,6 +758,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 .transform {
   transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .items-center {
   align-items: center;
 }
@@ -809,12 +812,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   line-height: calc(2.25 / 1.875);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
 }
-.text-5xl {
-  font-size: 3rem;
-  font-size: var(--text-5xl);
-  line-height: 1;
-  line-height: var(--tw-leading, var(--text-5xl--line-height));
-}
 .font-light {
   --tw-font-weight: var(--font-weight-light);
   font-weight: 300;
@@ -824,11 +821,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   --tw-font-weight: var(--font-weight-medium);
   font-weight: 500;
   font-weight: var(--font-weight-medium);
-}
-.tracking-tighter {
-  --tw-tracking: var(--tracking-tighter);
-  letter-spacing: -0.05em;
-  letter-spacing: var(--tracking-tighter);
 }
 .tracking-wider {
   --tw-tracking: var(--tracking-wider);

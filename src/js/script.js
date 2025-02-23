@@ -54,6 +54,7 @@
 			// classname for the element (if any) that when clicked closes the current level
 			backClass: CLASS_BACK,
 		},
+
 		_init() {
 			this.level = 0;
 			this.menu = document.getElementById( MENU_ID );
@@ -79,6 +80,7 @@
 			// initialize / bind the necessary events
 			this._initEvents();
 		},
+
 		_initEvents() {
 			const self = this;
 
@@ -200,7 +202,7 @@
 					}
 				}
 			}
-			// add class mp-pushed to main wrapper if opening the first time
+			// add class pushed to main wrapper if opening the first time
 			if ( this.level === 1 ) {
 				this.menu.classList.add( CLASS_PUSHED );
 				this.open = true;
