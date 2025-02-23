@@ -1,11 +1,15 @@
-@import "./icons.css";
+/* @import "./fonts.css"; */
+
+body {
+	font-family: "Satoshi", sans-serif;
+}
 
 /* Offcanvas */
-.mp-menu {
+.opus-dashboard {
 	position: fixed;
+	z-index: 99;
 	top: 0;
 	right: 0;
-	z-index: 1;
 	width: 100%;
 	height: 100%;
 	max-width: 600px;
@@ -13,18 +17,21 @@
 	transition: transform 0.5s;
 }
 
-.mp-level {
+.opus-dashboard__level {
 	position: fixed;
 	top: 0;
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #fff;
 	box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
 	transform: translate3d(100%, 0, 0);
 	transition: transform 0.5s;
 
-	.mp-level-open {
+	@media (prefers-color-scheme: dark) {
+		box-shadow: -1px 0 2px rgba(0, 0, 0, 1);
+	}
+
+	.is-open {
 		transform: translate3d(40px, 0, 0);
 	}
 
@@ -36,19 +43,56 @@
 		width: 100%;
 		height: 100%;
 		opacity: 0;
+		transform: scale(0);
 		background-color: rgba(0, 0, 0, 0.05);
-		transition: opacity 0.3s;
+		transition:
+			transform 0.5s,
+			opacity 0.5s;
 		z-index: -1;
+		cursor: pointer;
+
+		@media (prefers-color-scheme: dark) {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
 	}
 
-	&.mp-level-overlay::after {
+	h2 {
+		font-weight: 300;
+		svg {
+			font-size: 1.5rem;
+			position: absolute;
+			top: 10px;
+			left: 0;
+			opacity: 0;
+			transform: translateX(-100%);
+			transition:
+				opacity 0.5s,
+				transform 0.5s;
+		}
+	}
+
+	.arrow {
+		flex-basis: 100%;
+	}
+}
+
+.opus-dashboard__level-overlay {
+	&::after {
 		opacity: 1;
-		transition: opacity 0.3s;
+		transform: scale(1);
+	}
+
+	& > h2 svg {
+		opacity: 1;
+		transform: translateX(6px);
+		transition:
+			transform 0.5s,
+			opacity 0.5s;
 	}
 }
 
 /* First level */
-.mp-menu > .mp-level,
-.mp-menu > .mp-level.mp-level-open {
+.opus-dashboard > .opus-dashboard__level,
+.opus-dashboard > .opus-dashboard__level.is-open {
 	transform: translate3d(0, 0, 0);
 }

@@ -1,0 +1,42 @@
+- const levelClass = "opus-dashboard__level p-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white";
+
+- const ancorClass = "flex items-center p-4 text-3xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group";
+
+mixin levelTitle(name, icon)
+	h2(class='flex items-center p-4 text-5xl text-gray-900 dark:text-white group')
+		if icon
+			| !{icon}
+		= name
+
+mixin item(name, icon, hasSub)
+	a(href='#' class=ancorClass)
+		if icon
+			span.flex.items-center.me-2 !{icon}
+		= name
+		if hasSub
+			span.arrow.justify-items-end !{iconArrow}
+
+div(class=levelClass)
+	+levelTitle('Dashboard', iconDashboard)
+	ul
+		li
+			+item('Design', iconDesign, hasSub=true)
+			div(class=levelClass)
+				+levelTitle('Design', iconDesign)
+				ul
+					li
+						+item('Color', iconColor, hasSub=true)
+						div(class=levelClass)
+							+levelTitle('Color')
+							ul
+								li
+									+item('Color Settings')
+					li
+						+item('Layout', iconLayout)
+			li
+				+item('Content', iconContent)
+			li
+				+item('Settings', iconSettings)
+
+
+

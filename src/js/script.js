@@ -26,39 +26,33 @@
 		return e.closest( '.' + classname );
 	}
 
-	const MENU_ID = 'mp-menu';
-	const CLASS_LEVEL = 'mp-level';
-	const CLASS_OVERLAY = 'mp-level-overlay';
-	const CLASS_OPEN = 'mp-level-open';
-	const CLASS_PUSHED = 'mp-pushed';
+	const MENU_ID = 'opus-dashboard';
+	const CLASS_LEVEL = 'opus-dashboard__level';
+	const CLASS_OVERLAY = 'opus-dashboard__level-overlay';
+	const CLASS_BACK = 'opus-dashboard__level-back';
+	const CLASS_OPEN = 'is-open';
+	const CLASS_PUSHED = 'is-pushed';
 
 	/**
-	 * mlpushmenu.js v1.0.0
-	 * http://www.codrops.com
-	 *
-	 * Licensed under the MIT license.
-	 * http://www.opensource.org/licenses/mit-license.php
-	 *
-	 * Copyright 2013, Codrops
-	 * http://www.codrops.com
+	 * Offcanvas
 	 *
 	 * @param {Element} element - The menu element.
 	 * @param {Element} trigger - The menu trigger element.
 	 * @param {Object}  options - The options object.
 	 */
-	function mlPushMenu( element, trigger, options ) {
+	function opusDashboard( element, trigger, options ) {
 		this.element = element;
 		this.trigger = trigger;
 		this.options = extend( this.defaults, options );
 		this._init();
 	}
 
-	mlPushMenu.prototype = {
+	opusDashboard.prototype = {
 		defaults: {
 			// space between each overlaped level
 			levelSpacing: 40,
 			// classname for the element (if any) that when clicked closes the current level
-			backClass: 'mp-back',
+			backClass: CLASS_BACK,
 		},
 		_init() {
 			this.level = 0;
@@ -66,16 +60,14 @@
 			this.levels = [
 				...this.element.getElementsByClassName( CLASS_LEVEL ),
 			];
-			// save the depth of each of these mp-level elements
+			// save the depth of each of these level elements
 			this.levels.forEach( ( element ) => {
 				element.setAttribute(
 					'data-level',
 					getLevelDepth( element, this.element.id, CLASS_LEVEL )
 				);
 			} );
-			// the menu items
 			this.menuItems = [ ...this.element.getElementsByTagName( 'li' ) ];
-			// if type == "cover" these will serve as hooks to move back to the previous level
 			this.levelBack = [
 				...this.element.getElementsByClassName(
 					this.options.backClass
@@ -213,7 +205,7 @@
 				this.menu.classList.add( CLASS_PUSHED );
 				this.open = true;
 			}
-			// add class mp-level-open to the opening level element
+			// add class level-open to the opening level element
 			( subLevel || this.levels[ 0 ] ).classList.add( CLASS_OPEN );
 		},
 		// close the menu
@@ -237,7 +229,7 @@
 				element.style.transform = value;
 			} );
 		},
-		// removes classes mp-level-open from closing levels
+		// removes classes level-open from closing levels
 		_toggleLevels() {
 			for ( const levelEl of this.levels ) {
 				if ( levelEl.getAttribute( 'data-level' ) >= this.level + 1 ) {
@@ -252,5 +244,5 @@
 	};
 
 	// add to global namespace
-	window.mlPushMenu = mlPushMenu;
+	window.opusDashboard = opusDashboard;
 } )( window );

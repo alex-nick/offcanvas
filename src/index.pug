@@ -1,12 +1,14 @@
+include ./includes/icons.pug
 doctype html
 html
 	head
+		link(href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap", rel="stylesheet")
 		link(href="./css/tailwindcss.css", rel="stylesheet")
 		link(href="./css/style.css", rel="stylesheet")
 	body
-		nav#mp-menu.mp-menu
-			include ./includes/level.pug
+		nav(id='opus-dashboard' class='opus-dashboard')
+			include ./includes/levels.pug
 		include ./includes/trigger.pug
 
 	script(src="../src/js/script.js")
-	script new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
+	script new opusDashboard(document.getElementById('opus-dashboard'), document.getElementById('opus-dashboard__trigger'));

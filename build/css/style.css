@@ -1,239 +1,100 @@
-/*! tailwindcss v4.0.7 | MIT License | https://tailwindcss.com */
-@font-face {
-  font-family: "linecons";
-  src: url(../fonts/linecons..eot);
-  src: url(../fonts/linecons..eot?#iefix) format("embedded-opentype"),	url(../fonts/linecons..woff) format("woff"),	url(../fonts/linecons..ttf) format("truetype"),	url(../img/linecons..svg#linecons) format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-.icon:before {
-  font-family: "linecons";
-  font-style: normal;
-  font-weight: normal;
-  font-feature-settings: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  display: inline-block;
-  margin-right: 0.6em;
-  -webkit-font-smoothing: antialiased;
-}
-.icon-female:before {
-  content: "\f182";
-}
-.icon-male:before {
-  content: "\f183";
-}
-.icon-arrow-left:before {
-  content: "\e032";
-}
-.icon-arrow-left-2:before {
-  content: "\e034";
-}
-.icon-arrow-left-3:before {
-  content: "\e036";
-}
-.icon-arrow-left-4:before {
-  content: "\e038";
-}
-.icon-arrow-right:before {
-  content: "\e035";
-}
-.icon-arrow-right-2:before {
-  content: "\e037";
-}
-.icon-arrow-right-3:before {
-  content: "\e039";
-}
-.icon-arrow-right-4:before {
-  content: "\e033";
-}
-.icon-phone:before {
-  content: "\e000";
-}
-.icon-news:before {
-  content: "\e001";
-}
-.icon-photo:before {
-  content: "\e002";
-}
-.icon-shop:before {
-  content: "\e003";
-}
-.icon-wallet:before {
-  content: "\e004";
-}
-.icon-t-shirt:before {
-  content: "\e005";
-}
-.icon-heart:before {
-  content: "\e006";
-}
-.icon-cloud:before {
-  content: "\e007";
-}
-.icon-display:before {
-  content: "\e008";
-}
-.icon-diamond:before {
-  content: "\e009";
-}
-.icon-banknote:before {
-  content: "\e00a";
-}
-.icon-data:before {
-  content: "\e00b";
-}
-.icon-music:before {
-  content: "\e00c";
-}
-.icon-location:before {
-  content: "\e00d";
-}
-.icon-star:before {
-  content: "\e00e";
-}
-.icon-tv:before {
-  content: "\e00f";
-}
-.icon-eye:before {
-  content: "\e010";
-}
-.icon-megaphone:before {
-  content: "\e011";
-}
-.icon-study:before {
-  content: "\e012";
-}
-.icon-bubble:before {
-  content: "\e013";
-}
-.icon-sound:before {
-  content: "\e014";
-}
-.icon-video:before {
-  content: "\e015";
-}
-.icon-stack:before {
-  content: "\e016";
-}
-.icon-lab:before {
-  content: "\e017";
-}
-.icon-food:before {
-  content: "\e018";
-}
-.icon-cup:before {
-  content: "\e019";
-}
-.icon-trash:before {
-  content: "\e01a";
-}
-.icon-user:before {
-  content: "\e01b";
-}
-.icon-key:before {
-  content: "\e01c";
-}
-.icon-fire:before {
-  content: "\e01d";
-}
-.icon-clip:before {
-  content: "\e01e";
-}
-.icon-mail:before {
-  content: "\e01f";
-}
-.icon-search:before {
-  content: "\e020";
-}
-.icon-settings:before {
-  content: "\e021";
-}
-.icon-like:before {
-  content: "\e022";
-}
-.icon-calendar:before {
-  content: "\e023";
-}
-.icon-camera:before {
-  content: "\e024";
-}
-.icon-tag:before {
-  content: "\e025";
-}
-.icon-note:before {
-  content: "\e026";
-}
-.icon-clock:before {
-  content: "\e027";
-}
-.icon-lock:before {
-  content: "\e028";
-}
-.icon-vynil:before {
-  content: "\e029";
-}
-.icon-truck:before {
-  content: "\e02a";
-}
-.icon-paperplane:before {
-  content: "\e02b";
-}
-.icon-bulb:before {
-  content: "\e02c";
-}
-.icon-pen:before {
-  content: "\e02d";
-}
-.icon-params:before {
-  content: "\e02e";
-}
-.icon-world:before {
-  content: "\e02f";
-}
-.mp-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  max-width: 600px;
-  transform: translate3d(100%, 0, 0);
-  transition: transform 0.5s;
-}
-.mp-level {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
-  transform: translate3d(100%, 0, 0);
-  transition: transform 0.5s;
-}
-.mp-level .mp-level-open {
-  transform: translate3d(40px, 0, 0);
-}
-.mp-level::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: opacity 0.3s;
-  z-index: -1;
-}
-.mp-level.mp-level-overlay::after {
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-.mp-menu > .mp-level,
-.mp-menu > .mp-level.mp-level-open {
-  transform: translate3d(0, 0, 0);
+/* @import "./fonts.css"; */
+
+body {
+	font-family: "Satoshi", sans-serif;
+}
+
+/* Offcanvas */
+.opus-dashboard {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 600px;
+	transform: translate3d(100%, 0, 0);
+	transition: transform 0.5s;
+}
+
+.opus-dashboard__level {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+	transform: translate3d(100%, 0, 0);
+	transition: transform 0.5s;
+}
+
+@media (prefers-color-scheme: dark) {
+
+.opus-dashboard__level {
+		box-shadow: -1px 0 2px rgba(0, 0, 0, 1);
+}
+	}
+
+.opus-dashboard__level .is-open {
+		transform: translate3d(40px, 0, 0);
+	}
+
+.opus-dashboard__level::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transform: scale(0);
+		background-color: rgba(0, 0, 0, 0.05);
+		transition:
+			transform 0.5s, opacity 0.5s;
+		z-index: -1;
+		cursor: pointer;
+	}
+
+@media (prefers-color-scheme: dark) {
+
+.opus-dashboard__level::after {
+			background-color: rgba(0, 0, 0, 0.2);
+	}
+		}
+
+.opus-dashboard__level h2 {
+		font-weight: 300;
+	}
+
+.opus-dashboard__level h2 svg {
+			font-size: 1.5rem;
+			position: absolute;
+			top: 10px;
+			left: 0;
+			opacity: 0;
+			transform: translateX(-100%);
+			transition:
+				opacity 0.5s, transform 0.5s;
+		}
+
+.opus-dashboard__level .arrow {
+		flex-basis: 100%;
+	}
+
+.opus-dashboard__level-overlay::after {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+.opus-dashboard__level-overlay > h2 svg {
+		opacity: 1;
+		transform: translateX(6px);
+		transition:
+			transform 0.5s, opacity 0.5s;
+	}
+
+/* First level */
+.opus-dashboard > .opus-dashboard__level,
+.opus-dashboard > .opus-dashboard__level.is-open {
+	transform: translate3d(0, 0, 0);
 }

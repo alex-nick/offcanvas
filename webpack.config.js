@@ -1,17 +1,17 @@
-const path = require('path');
-const PugPlugin = require('pug-plugin');
+const path = require( 'path' );
+const PugPlugin = require( 'pug-plugin' );
 
 module.exports = {
 	watchOptions: {
-		ignored: new RegExp('.*^((?!(/src/)).)*$'),
+		ignored: new RegExp( '.*^((?!(/src/)).)*$' ),
 	},
 	output: {
-		path: path.join(__dirname, 'build'),
+		path: path.join( __dirname, 'build' ),
 		filename: '[name].js',
 		clean: true,
 	},
 	plugins: [
-		new PugPlugin({
+		new PugPlugin( {
 			entry: {
 				index: `./src/index.pug`,
 			},
@@ -21,13 +21,13 @@ module.exports = {
 			css: {
 				filename: 'css/[name].css',
 			},
-		}),
+		} ),
 	],
 	module: {
 		rules: [
 			{
 				test: /\.css$/i,
-				use: ['css-loader', 'postcss-loader'],
+				use: [ 'css-loader', 'postcss-loader' ],
 			},
 			{
 				test: /\.(ico|png|jp?g|webp|svg)$/,

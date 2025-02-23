@@ -734,39 +734,8 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 .visible {
   visibility: visible;
 }
-.fixed {
-  position: fixed;
-}
 .relative {
   position: relative;
-}
-.container {
-  width: 100%;
-}
-@media (min-width: 40rem) {
-  .container {
-    max-width: 40rem;
-  }
-}
-@media (min-width: 48rem) {
-  .container {
-    max-width: 48rem;
-  }
-}
-@media (min-width: 64rem) {
-  .container {
-    max-width: 64rem;
-  }
-}
-@media (min-width: 80rem) {
-  .container {
-    max-width: 80rem;
-  }
-}
-@media (min-width: 96rem) {
-  .container {
-    max-width: 96rem;
-  }
 }
 .-ms-1 {
   margin-left: calc(0.25rem * -1);
@@ -780,34 +749,20 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   margin-bottom: calc(0.25rem * 2);
   margin-bottom: calc(var(--spacing) * 2);
 }
-.block {
-  display: block;
-}
 .flex {
   display: flex;
 }
-.grid {
-  display: grid;
-}
-.hidden {
-  display: none;
-}
 .inline-flex {
   display: inline-flex;
-}
-.h-5 {
-  height: calc(0.25rem * 5);
-  height: calc(var(--spacing) * 5);
-}
-.w-5 {
-  width: calc(0.25rem * 5);
-  width: calc(var(--spacing) * 5);
 }
 .transform {
   transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
 }
 .items-center {
   align-items: center;
+}
+.justify-items-end {
+  justify-items: end;
 }
 .rounded-lg {
   border-radius: 0.5rem;
@@ -829,9 +784,9 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding: calc(0.25rem * 4);
   padding: calc(var(--spacing) * 4);
 }
-.p-8 {
-  padding: calc(0.25rem * 8);
-  padding: calc(var(--spacing) * 8);
+.p-10 {
+  padding: calc(0.25rem * 10);
+  padding: calc(var(--spacing) * 10);
 }
 .px-5 {
   padding-left: calc(0.25rem * 5);
@@ -854,11 +809,11 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   line-height: calc(2.25 / 1.875);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
 }
-.text-sm {
-  font-size: 0.875rem;
-  font-size: var(--text-sm);
-  line-height: calc(1.25 / 0.875);
-  line-height: var(--tw-leading, var(--text-sm--line-height));
+.text-5xl {
+  font-size: 3rem;
+  font-size: var(--text-5xl);
+  line-height: 1;
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
 }
 .font-medium {
   --tw-font-weight: var(--font-weight-medium);
