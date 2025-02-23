@@ -6,7 +6,7 @@ html
 		link(href="./css/tailwindcss.css", rel="stylesheet")
 		link(href="./css/style.css", rel="stylesheet")
 	body
-		nav(id='opus-dashboard' class='opus-dashboard')
+		nav(id='opus-dashboard' class='opus-dashboard' role="complementary" aria-hidden="false" tabindex="-1")
 			include ./includes/levels.pug
 		include ./includes/trigger.pug
 

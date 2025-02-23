@@ -1,9 +1,9 @@
 - const levelClass = "opus-dashboard__level p-10 dark:bg-gray-800 dark:border-gray-700 dark:text-white";
 
-- const ancorClass = "flex items-center p-4 text-3xl text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group";
+- const ancorClass = "flex items-center p-4 text-3xl tracking-wider text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group";
 
 mixin levelTitle(name, icon)
-	h2(class='flex items-center p-4 text-5xl text-gray-900 dark:text-white group')
+	h2(class='level-title text-sm@md font-light tracking-widest p-4 text-gray-900 dark:text-white')
 		if icon
 			| !{icon}
 		= name
@@ -16,7 +16,7 @@ mixin item(name, icon, hasSub)
 		if hasSub
 			span.arrow.justify-items-end !{iconArrow}
 
-div(class=levelClass)
+div(class=levelClass role="navigation" aria-label="Dashboard")
 	+levelTitle('Dashboard', iconDashboard)
 	ul
 		li
@@ -26,7 +26,7 @@ div(class=levelClass)
 				ul
 					li
 						+item('Color', iconColor, hasSub=true)
-						div(class=levelClass)
+						div(class=levelClass role="navigation" aria-label="Color")
 							+levelTitle('Color')
 							ul
 								li

@@ -62,9 +62,15 @@ body {
 	}
 		}
 
-.opus-dashboard__level h2 {
-		font-weight: 300;
-	}
+.opus-dashboard__level h2::before {
+			content: "";
+			display: inline-block;
+			width: 2em;
+			height: 1px;
+			background-color: currentColor;
+			vertical-align: middle;
+			margin-right: 0.5em;
+		}
 
 .opus-dashboard__level h2 svg {
 			font-size: 1.5rem;
